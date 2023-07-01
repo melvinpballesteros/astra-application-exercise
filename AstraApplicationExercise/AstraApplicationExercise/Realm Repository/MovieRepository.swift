@@ -1,0 +1,54 @@
+//
+//  MovieRepository.swift
+//  AstraApplicationExercise
+//
+//  Created by Melvin Ballesteros on 7/2/23.
+//
+
+import Foundation
+
+class MovieRepository {
+    
+    let realm = RealmManager.shared
+    static let shared = MovieRepository()
+    private init() {}
+    
+    func getAll() -> [Movie] {
+        let item = realm.getAll(Movie())
+        return [Movie] (item)
+    }
+    
+    func create(_ movie: Movie) {
+        let obj = Movie(trackId: movie.trackId, 
+                        title: movie.title, 
+                        price: movie.price, 
+                        genre: movie.genre, 
+                        artwork: movie.artwork, 
+                        shortDesc: movie.shortDesc, 
+                        longDesc: movie.longDesc, 
+                        isFavorite: movie.isFavorite)
+        realm.create(obj)
+    }
+    
+    func create(_ movies: [Movie]) {
+        realm.create(movies)
+    }
+    
+    func delete(_ id: Int) {
+        if let obj = realm.getAll(Movie()).filter({$0.trackId == id}).first {
+            realm.delete(obj)
+        }
+    }
+    
+    func updateFavorite(_ oldMovie: Movie, newMovie: Movie) {
+        realm.update(oldMovie, with: ["isFavorite": newMovie.isFavorite])
+    }
+    
+    func isFavoriteMovie(_ movie: Movie) -> Bool {
+        if let object = realm.getAll(Movie()).filter({$0.trackId == movie.trackId}).first {
+            return object.isFavorite
+        } else {
+            return false
+        }
+    }
+}

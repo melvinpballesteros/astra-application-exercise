@@ -18,6 +18,8 @@
 		278D03952A4F156C00DA794A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03942A4F156C00DA794A /* SplashViewController.swift */; };
 		278D03982A50946F00DA794A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03972A50946F00DA794A /* Movie.swift */; };
 		278D039A2A50947B00DA794A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03992A50947B00DA794A /* MusicVideo.swift */; };
+		278D039C2A509A2000DA794A /* MovieRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D039B2A509A2000DA794A /* MovieRepository.swift */; };
+		278D039E2A509A2A00DA794A /* MusicVideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D039D2A509A2A00DA794A /* MusicVideoRepository.swift */; };
 		41537408D52B31B8E7ECEF80 /* Pods_AstraApplicationExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		278D03942A4F156C00DA794A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		278D03972A50946F00DA794A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		278D03992A50947B00DA794A /* MusicVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		278D039B2A509A2000DA794A /* MovieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRepository.swift; sourceTree = "<group>"; };
+		278D039D2A509A2A00DA794A /* MusicVideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoRepository.swift; sourceTree = "<group>"; };
 		295CCF49385F6C03AF034511 /* Pods-AstraApplicationExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.debug.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstraApplicationExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912D1C972CAC12628B76303A /* Pods-AstraApplicationExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.release.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.release.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 		278D03902A4F14EF00DA794A /* Realm Repository */ = {
 			isa = PBXGroup;
 			children = (
+				278D039B2A509A2000DA794A /* MovieRepository.swift */,
+				278D039D2A509A2A00DA794A /* MusicVideoRepository.swift */,
 			);
 			path = "Realm Repository";
 			sourceTree = "<group>";
@@ -343,12 +349,14 @@
 			files = (
 				278D03982A50946F00DA794A /* Movie.swift in Sources */,
 				278D038D2A4F14D400DA794A /* RealmManager.swift in Sources */,
+				278D039C2A509A2000DA794A /* MovieRepository.swift in Sources */,
 				278D038F2A4F14DE00DA794A /* ApiManager.swift in Sources */,
 				278D039A2A50947B00DA794A /* MusicVideo.swift in Sources */,
 				278D036D2A4F134300DA794A /* AppDelegate.swift in Sources */,
 				278D036F2A4F134300DA794A /* SceneDelegate.swift in Sources */,
 				278D03952A4F156C00DA794A /* SplashViewController.swift in Sources */,
 				278D03922A4F151100DA794A /* Constants.swift in Sources */,
+				278D039E2A509A2A00DA794A /* MusicVideoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
