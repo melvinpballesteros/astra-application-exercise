@@ -16,6 +16,9 @@
 		278D038F2A4F14DE00DA794A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D038E2A4F14DE00DA794A /* ApiManager.swift */; };
 		278D03922A4F151100DA794A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03912A4F151100DA794A /* Constants.swift */; };
 		278D03952A4F156C00DA794A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03942A4F156C00DA794A /* SplashViewController.swift */; };
+		278D03982A50946F00DA794A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03972A50946F00DA794A /* Movie.swift */; };
+		278D039A2A50947B00DA794A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03992A50947B00DA794A /* MusicVideo.swift */; };
+		41537408D52B31B8E7ECEF80 /* Pods_AstraApplicationExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,11 @@
 		278D038E2A4F14DE00DA794A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		278D03912A4F151100DA794A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		278D03942A4F156C00DA794A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		278D03972A50946F00DA794A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		278D03992A50947B00DA794A /* MusicVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		295CCF49385F6C03AF034511 /* Pods-AstraApplicationExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.debug.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.debug.xcconfig"; sourceTree = "<group>"; };
+		52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstraApplicationExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912D1C972CAC12628B76303A /* Pods-AstraApplicationExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.release.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41537408D52B31B8E7ECEF80 /* Pods_AstraApplicationExercise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04336FD853440F83F867DD71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		278D03602A4F134300DA794A = {
 			isa = PBXGroup;
 			children = (
 				278D036B2A4F134300DA794A /* AstraApplicationExercise */,
 				278D036A2A4F134300DA794A /* Products */,
+				9F3DA15698BEDD45955F3D24 /* Pods */,
+				04336FD853440F83F867DD71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,8 +211,19 @@
 		278D03962A4F16C700DA794A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				278D03972A50946F00DA794A /* Movie.swift */,
+				278D03992A50947B00DA794A /* MusicVideo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9F3DA15698BEDD45955F3D24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				295CCF49385F6C03AF034511 /* Pods-AstraApplicationExercise.debug.xcconfig */,
+				912D1C972CAC12628B76303A /* Pods-AstraApplicationExercise.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +233,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 278D037D2A4F134400DA794A /* Build configuration list for PBXNativeTarget "AstraApplicationExercise" */;
 			buildPhases = (
+				86F02B3DF2CEB1C9DCF1C2B5 /* [CP] Check Pods Manifest.lock */,
 				278D03652A4F134300DA794A /* Sources */,
 				278D03662A4F134300DA794A /* Frameworks */,
 				278D03672A4F134300DA794A /* Resources */,
+				1BFABE25DE25A854B9A9F339 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,13 +294,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1BFABE25DE25A854B9A9F339 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86F02B3DF2CEB1C9DCF1C2B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AstraApplicationExercise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		278D03652A4F134300DA794A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278D03982A50946F00DA794A /* Movie.swift in Sources */,
 				278D038D2A4F14D400DA794A /* RealmManager.swift in Sources */,
 				278D038F2A4F14DE00DA794A /* ApiManager.swift in Sources */,
+				278D039A2A50947B00DA794A /* MusicVideo.swift in Sources */,
 				278D036D2A4F134300DA794A /* AppDelegate.swift in Sources */,
 				278D036F2A4F134300DA794A /* SceneDelegate.swift in Sources */,
 				278D03952A4F156C00DA794A /* SplashViewController.swift in Sources */,
@@ -414,6 +490,7 @@
 		};
 		278D037E2A4F134400DA794A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 295CCF49385F6C03AF034511 /* Pods-AstraApplicationExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,6 +522,7 @@
 		};
 		278D037F2A4F134400DA794A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912D1C972CAC12628B76303A /* Pods-AstraApplicationExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
