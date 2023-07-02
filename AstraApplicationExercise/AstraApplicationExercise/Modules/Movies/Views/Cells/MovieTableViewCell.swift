@@ -12,6 +12,8 @@ class MovieTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "MovieTableViewCell"
     
+    public var tapFavorite: (() -> Void)?
+    
     // MARK: - Controls
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -145,10 +147,12 @@ class MovieTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(_ viewModel: MovieViewModel) {
+    func configure(viewModel: MovieViewModel) {
         titleLabel.text = viewModel.textTitle
         genreLabel.text = viewModel.textGenre
         priceLabel.text = viewModel.textPrice
+        
+        viewModel.getFavoriteStatus(withFavoriteButton: favoriteButton)
         
         fetchImage(viewModel.textArtwork)
     }
@@ -173,7 +177,7 @@ class MovieTableViewCell: UITableViewCell {
     
     // MARK: - Events
     @objc private func userTapFavorite() {
-         // tapFavorite!()
+         tapFavorite!()
     }
 
 }
