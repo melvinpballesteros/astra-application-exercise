@@ -13,7 +13,7 @@ class MovieRepository {
     static let shared = MovieRepository()
     private init() {}
     
-    func getAll() -> [Movie] {
+    func getAllMovies() -> [Movie] {
         let item = realm.getAll(Movie())
         return [Movie] (item)
     }
@@ -34,7 +34,7 @@ class MovieRepository {
         realm.create(movies)
     }
     
-    func delete(_ id: Int) {
+    func delete(id: Int) {
         if let obj = realm.getAll(Movie()).filter({$0.trackId == id}).first {
             realm.delete(obj)
         }
@@ -49,7 +49,7 @@ class MovieRepository {
         realm.update(oldMovie, with: ["isFavorite": newMovie.isFavorite])
     }
     
-    func isFavoriteMovie(_ movie: Movie) -> Bool {
+    func isFavoriteMovie(movie: Movie) -> Bool {
         if let object = realm.getAll(Movie()).filter({$0.trackId == movie.trackId}).first {
             return object.isFavorite
         } else {
@@ -64,7 +64,7 @@ class MovieRepository {
         if results.count > 0 {
             return results
         } else {
-            return getAll()
+            return getAllMovies()
         }
     }
 }
