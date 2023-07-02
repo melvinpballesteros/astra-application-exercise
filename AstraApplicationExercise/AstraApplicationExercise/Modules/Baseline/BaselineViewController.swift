@@ -10,6 +10,13 @@ import UIKit
 class BaselineViewController: UIViewController {
     
     // MARK: - Controls
+    lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        indicatorView.hidesWhenStopped = true
+        indicatorView.stopAnimating()
+        return indicatorView
+    }()
+    
     lazy var headerLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -36,7 +43,7 @@ class BaselineViewController: UIViewController {
         let image = UIImage(named: "search")
         imageView.image = image
 
-        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 16 + 2 * 10, height: 16))
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 20 + 2 * 10, height: 16))
         containerView.addSubview(imageView)
         
         textField.leftView = containerView
@@ -58,7 +65,8 @@ class BaselineViewController: UIViewController {
         view.setSubviewForAutoLayout(
             searchTextField,
             headerLabel,
-            tableView
+            tableView,
+            activityIndicatorView
         )
     }
     
@@ -76,13 +84,27 @@ class BaselineViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-80)
             make.top.equalTo(searchTextField.snp.bottom).offset(25)
+        }
+        
+        activityIndicatorView.snp.makeConstraints { make in
+            make.width.height.equalTo(50)
+            make.centerX.centerY.equalToSuperview()
         }
     }
     
     private func setupBackground() {
         view.backgroundColor = AppColor.black
+    }
+    
+    func activityIndicatorStart() {
+        activityIndicatorView.startAnimating()
+    }
+    
+    func activityIndicatorEnd() {
+        activityIndicatorView.stopAnimating()
     }
 
 }
