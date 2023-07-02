@@ -37,10 +37,10 @@ class RealmManager {
     
     /// Function - Mass Creation
     func create<T: Object>(_ object: [T]) {
-        let realm = try! Realm()
+        let realm = try? Realm()
         do {
-            try realm.write {
-                realm.add(object)
+            try realm?.write {
+                realm?.add(object)
             }
         } catch {
             print(error.localizedDescription)
