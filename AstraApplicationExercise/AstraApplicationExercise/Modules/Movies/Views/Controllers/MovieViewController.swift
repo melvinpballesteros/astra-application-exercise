@@ -19,7 +19,10 @@ class MovieViewController: BaselineViewController {
         setupTargets()
         setupContext()
         setupTableView()
+        /// Fetch Movies - API
         fetchMovies()
+        /// Setup Realm Observer
+        viewModel.setupRealmObserver(tableView: tableView)
     }
     
     // MARK: - Setup    
@@ -45,6 +48,12 @@ class MovieViewController: BaselineViewController {
 
     
     // MARK: - Events
+    @objc private func userTapDetailPage() {
+        let controller = MovieDetailViewController()
+        controller.movieViewModel = viewModel
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
+    }
     
     
     // MARK: - Logic
@@ -73,13 +82,15 @@ class MovieViewController: BaselineViewController {
     
     @objc private func searchMovie() {
         viewModel.searchMovies(searchTextField.text ?? "")
+        tableView.reloadData()
     }
 
 }
 
 extension MovieViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.setSelectedMovie(viewModel.movies[indexPath.row])
+        viewModel.index = indexPath.row
+        userTapDetailPage()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,8 +105,18 @@ extension MovieViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.reuseIdentifier, for: indexPath) as! MovieTableViewCell
-        viewModel.movie = viewModel.movies[indexPath.row]
-        cell.configure(viewModel)
+        /// Set the model and selected index
+        // viewModel.movie = viewModel.movies[indexPath.row]
+        viewModel.index = indexPath.row
+        
+        /// Check if item is favorite
+        viewModel.checkFavoriteMovie(index: indexPath.row)
+        /// Configure the cell with view model
+        cell.configure(viewModel: viewModel)
+        /// Like / UnLike Favorites
+        cell.tapFavorite = {
+            self.viewModel.likeUnlikeMovie(index: indexPath.row)
+        }
         return cell
     }
 }
