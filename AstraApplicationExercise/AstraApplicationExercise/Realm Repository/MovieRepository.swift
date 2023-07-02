@@ -40,6 +40,11 @@ class MovieRepository {
         }
     }
     
+    func deleteAll() {
+        let results = realm.getAll(Movie())
+        realm.delete(results)
+    }
+    
     func updateFavorite(_ oldMovie: Movie, newMovie: Movie) {
         realm.update(oldMovie, with: ["isFavorite": newMovie.isFavorite])
     }
@@ -49,6 +54,17 @@ class MovieRepository {
             return object.isFavorite
         } else {
             return false
+        }
+    }
+    
+    func search(_ text: String) -> [Movie] {
+        let objects = realm.getAll(Movie())
+        let predicate = NSPredicate(format: "(title contains[cd] %@) OR (genre contains[cd] %@) OR (shortDesc contains[cd] %@) OR (longDesc contains[cd] %@)", text, text, text, text)
+        let results = [Movie] (objects.filter(predicate))
+        if results.count > 0 {
+            return results
+        } else {
+            return getAll()
         }
     }
 }
