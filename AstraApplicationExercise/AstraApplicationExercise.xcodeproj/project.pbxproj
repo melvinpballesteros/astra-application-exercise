@@ -28,6 +28,10 @@
 		278D03B32A50A4C700DA794A /* BaselineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03B22A50A4C700DA794A /* BaselineViewController.swift */; };
 		278D03B52A50A58A00DA794A /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03B42A50A58A00DA794A /* MovieViewModel.swift */; };
 		278D03B92A50A63700DA794A /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D03B82A50A63700DA794A /* MovieTableViewCell.swift */; };
+		27E0398E2A517F6900D18719 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E0398D2A517F6900D18719 /* MovieDetailViewController.swift */; };
+		27E039902A517FCA00D18719 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E0398F2A517FCA00D18719 /* MovieDetailViewModel.swift */; };
+		27E039922A5180C400D18719 /* NSAttribute+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E039912A5180C400D18719 /* NSAttribute+Extension.swift */; };
+		27E039942A519DD400D18719 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E039932A519DD400D18719 /* String+Extension.swift */; };
 		41537408D52B31B8E7ECEF80 /* Pods_AstraApplicationExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		278D03B22A50A4C700DA794A /* BaselineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineViewController.swift; sourceTree = "<group>"; };
 		278D03B42A50A58A00DA794A /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		278D03B82A50A63700DA794A /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		27E0398D2A517F6900D18719 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		27E0398F2A517FCA00D18719 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		27E039912A5180C400D18719 /* NSAttribute+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttribute+Extension.swift"; sourceTree = "<group>"; };
+		27E039932A519DD400D18719 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		295CCF49385F6C03AF034511 /* Pods-AstraApplicationExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.debug.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		52353E1B1BE60A0D42FA927B /* Pods_AstraApplicationExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AstraApplicationExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912D1C972CAC12628B76303A /* Pods-AstraApplicationExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AstraApplicationExercise.release.xcconfig"; path = "Target Support Files/Pods-AstraApplicationExercise/Pods-AstraApplicationExercise.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				278D039F2A509EDF00DA794A /* UIView+Extension.swift */,
+				27E039912A5180C400D18719 /* NSAttribute+Extension.swift */,
+				27E039932A519DD400D18719 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				278D03B42A50A58A00DA794A /* MovieViewModel.swift */,
+				27E0398F2A517FCA00D18719 /* MovieDetailViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -323,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				278D03A72A50A00100DA794A /* MovieViewController.swift */,
+				27E0398D2A517F6900D18719 /* MovieDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -463,10 +475,14 @@
 				278D036D2A4F134300DA794A /* AppDelegate.swift in Sources */,
 				278D03B32A50A4C700DA794A /* BaselineViewController.swift in Sources */,
 				278D03AC2A50A02200DA794A /* MusicVideoViewController.swift in Sources */,
+				27E039942A519DD400D18719 /* String+Extension.swift in Sources */,
 				278D036F2A4F134300DA794A /* SceneDelegate.swift in Sources */,
+				27E0398E2A517F6900D18719 /* MovieDetailViewController.swift in Sources */,
 				278D03952A4F156C00DA794A /* SplashViewController.swift in Sources */,
 				278D03A42A509F9B00DA794A /* MainTabBarViewController.swift in Sources */,
+				27E039902A517FCA00D18719 /* MovieDetailViewModel.swift in Sources */,
 				278D03922A4F151100DA794A /* Constants.swift in Sources */,
+				27E039922A5180C400D18719 /* NSAttribute+Extension.swift in Sources */,
 				278D03B52A50A58A00DA794A /* MovieViewModel.swift in Sources */,
 				278D039E2A509A2A00DA794A /* MusicVideoRepository.swift in Sources */,
 			);
