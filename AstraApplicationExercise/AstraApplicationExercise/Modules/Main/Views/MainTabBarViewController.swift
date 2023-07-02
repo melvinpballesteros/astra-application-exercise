@@ -38,7 +38,7 @@ class MainTabBarViewController: UITabBarController {
     
     private func setupControllers() {
         viewControllers = [
-            viewModel.createTabController(title: viewModel.tab1Text, controller: movieController, imageFill: ""),
+            viewModel.createTabController(title: viewModel.tab1Text, controller: movieController, imageFill: "tab-movie"),
             viewModel.createTabController(title: viewModel.tab2Text, controller: musicVideoController, imageFill: "")
             ]
     }
