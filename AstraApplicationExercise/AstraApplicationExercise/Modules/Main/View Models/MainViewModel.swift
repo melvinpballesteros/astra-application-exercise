@@ -12,6 +12,7 @@ class MainViewModel {
     
     let tab1Text = "Movies"
     let tab2Text = "Music Videos"
+    let tab3Text = "Series"
     
     func createTabController(title: String, 
                              controller: UIViewController, 

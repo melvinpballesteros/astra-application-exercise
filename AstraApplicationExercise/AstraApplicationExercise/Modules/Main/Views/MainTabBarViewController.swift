@@ -21,6 +21,11 @@ class MainTabBarViewController: UITabBarController {
         let controller = MusicVideoViewController()
         return controller
     }()
+    
+    lazy var seriesController: SeriesViewController = {
+        let controller = SeriesViewController()
+        return controller
+    }()
 
     
     override func viewDidLoad() {
@@ -39,7 +44,8 @@ class MainTabBarViewController: UITabBarController {
     private func setupControllers() {
         viewControllers = [
             viewModel.createTabController(title: viewModel.tab1Text, controller: movieController, imageFill: "tab-movie"),
-            viewModel.createTabController(title: viewModel.tab2Text, controller: musicVideoController, imageFill: "")
+            viewModel.createTabController(title: viewModel.tab2Text, controller: musicVideoController, imageFill: "tab-music-video"),
+            viewModel.createTabController(title: viewModel.tab3Text, controller: seriesController, imageFill: "tab-series")
             ]
     }
 }

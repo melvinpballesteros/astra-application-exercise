@@ -89,7 +89,7 @@ class MovieTableViewCell: UITableViewCell {
         contentView.setSubviewForAutoLayout(
             backgroundImageView,
             thumbnail,
-            favoriteButton,
+            // favoriteButton,
             contextView
         )
         
@@ -114,11 +114,11 @@ class MovieTableViewCell: UITableViewCell {
             make.centerY.equalToSuperview()
         }
         
-        favoriteButton.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.right.equalTo(backgroundImageView).offset(-10)
-            make.top.equalToSuperview().offset(13)
-        }
+//        favoriteButton.snp.makeConstraints { make in
+//            make.width.height.equalTo(40)
+//            make.right.equalTo(backgroundImageView).offset(-10)
+//            make.top.equalToSuperview().offset(13)
+//        }
         
         contextView.snp.makeConstraints { make in
             make.left.equalTo(thumbnail.snp.right).offset(16)
@@ -155,6 +155,26 @@ class MovieTableViewCell: UITableViewCell {
         viewModel.getFavoriteStatus(withFavoriteButton: favoriteButton)
         
         fetchImage(viewModel.textArtwork)
+    }
+    
+    func configureMusicVideoCell(viewModel: MusicVideoViewModel) {
+        titleLabel.text = viewModel.textTitle
+        genreLabel.text = viewModel.textGenre
+        priceLabel.text = viewModel.textPrice
+        
+        viewModel.getFavoriteStatus(withFavoriteButton: favoriteButton)
+
+        fetchImage(viewModel.textArtwork)
+    }
+    
+    func configureSeriesCell(viewModel: SeriesViewModel) {
+        titleLabel.text = viewModel.textTitle
+        genreLabel.text = viewModel.textType
+        // priceLabel.text = viewModel.textID
+        
+        // viewModel.getFavoriteStatus(withFavoriteButton: favoriteButton)
+
+        fetchImage(viewModel.textPoster)        
     }
     
     

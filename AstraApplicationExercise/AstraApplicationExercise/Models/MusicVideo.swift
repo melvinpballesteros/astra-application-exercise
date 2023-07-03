@@ -23,7 +23,7 @@ class MusicVideo: Object {
     convenience init(_ json: JSON) {
         self.init()
         
-        self.title = json["collectionName"].stringValue
+        self.title = json["trackName"].stringValue
         self.trackId = json["trackId"].intValue
         self.price = json["trackPrice"].doubleValue
         self.genre = json["primaryGenreName"].stringValue

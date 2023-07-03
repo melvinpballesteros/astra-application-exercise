@@ -11,6 +11,8 @@ import UIKit
 enum Api {
     static let movie = "https://itunes.apple.com/search?media=movie&term=2023"
     static let musicVideo = "https://itunes.apple.com/search?media=movie&term=2023&entity=musicVideo"
+    static let season = "https://www.omdbapi.com/?apikey=17c3e2c8&s=series&type=series&y=2023&page=1"
+    static let seasonDetails = "https://www.omdbapi.com/?apikey=17c3e2c8&i="
 }
 
 enum screenSize {
